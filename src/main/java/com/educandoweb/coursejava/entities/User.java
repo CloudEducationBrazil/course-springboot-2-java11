@@ -2,11 +2,20 @@ package com.educandoweb.coursejava.entities;
 
 import java.io.Serializable;
 
+// Especificação do JPA - O hibernate eh a implementação do JPA
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 // Interface Serializable = Para que os objetos possam ser transformados em cadeias de bytes 
 // gravados em arquivos para trafegar na rede
+@Entity
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
