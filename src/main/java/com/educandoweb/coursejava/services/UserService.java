@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.educandoweb.coursejava.entities.User;
 import com.educandoweb.coursejava.repositories.UserRepository;
 
+// @Component
 @Service
 public class UserService {
 
