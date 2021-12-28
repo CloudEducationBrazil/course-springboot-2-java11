@@ -12,11 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 // Interface Serializable = Para que os objetos possam ser transformados em cadeias de bytes 
 // gravados em arquivos para trafegar na rede
 @Entity
 @Table(name = "tb_user")
-public class User implements Serializable {
+public class User implements Serializable { // Jackson, biblioteca que faz a serialização do JSON
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -27,7 +29,11 @@ public class User implements Serializable {
 	private String phone;
 	private String password;
 	
-	// Associação - Diagrama de Classe DER
+	// Associação - Diagrama de Classe DER // To many association ele faz o lazing loading, 
+	// somente o JPA não carrega os objetos para muitos, para não estourar a memória do computador
+	// Em properties a instrução "spring.jpa.open-in-view", tem que está TRUE. Ex.: spring.jpa.open-in-view=true
+	// Para reinderizar o JSON no final do ciclo de vida da class invocando o JPA
+	@JsonIgnore
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 	

@@ -13,7 +13,11 @@ import com.educandoweb.coursejava.repositories.UserRepository;
 @Service
 public class UserService {
 
-	// Para injeção de dependência seja feita pelo Spring Boot de forma transparente (automática)
+	// Injeção de dependência - Dependency Injection
+	// Feita pelo Spring Boot de forma transparente (automática)
+	// Padrão de desenvolvimento de sistemas
+	// para manter baixo o nível de acoplamento entre diferentes módulos de um sistema
+	
 	@Autowired
 	private UserRepository repository;
 	
