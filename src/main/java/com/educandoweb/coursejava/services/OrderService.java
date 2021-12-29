@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.educandoweb.coursejava.entities.Order;
-import com.educandoweb.coursejava.entities.User;
 import com.educandoweb.coursejava.repositories.OrderRepository;
 
 // Annotation

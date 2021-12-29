@@ -1,7 +1,6 @@
 package com.educandoweb.coursejava.resources;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,7 @@ import com.educandoweb.coursejava.entities.Category;
 import com.educandoweb.coursejava.services.CategoryService;
 
 @RestController
-@RequestMapping(name = "/categories")
+@RequestMapping(value = "/categories")
 public class CategoryResource {
 	
 	@Autowired
@@ -26,7 +25,7 @@ public class CategoryResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(name = "/{id}")
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id){
 		Category obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
