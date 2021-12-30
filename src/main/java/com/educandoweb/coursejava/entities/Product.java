@@ -36,7 +36,6 @@ public class Product implements Serializable {
 	private Set<Category> categories = new HashSet<>(); // Set = List (Set, evita repetição dentro do conjunto)
 	
 	public Product() {
-		super();
 	}
 
 	public Product(Long id, String name, String description, Double price, String imgUrl) {

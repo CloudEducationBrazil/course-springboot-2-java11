@@ -10,7 +10,7 @@ import com.educandoweb.coursejava.entities.Order;
 import com.educandoweb.coursejava.entities.Product;
 
 @Embeddable
-public class OrdemItemPK implements Serializable {
+public class OrderItemPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
@@ -49,7 +49,7 @@ public class OrdemItemPK implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OrdemItemPK other = (OrdemItemPK) obj;
+		OrderItemPK other = (OrderItemPK) obj;
 		if (order == null) {
 			if (other.order != null)
 				return false;
